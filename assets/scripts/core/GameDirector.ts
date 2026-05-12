@@ -7,17 +7,17 @@ export class DataByBetId {
     @property({ displayName: 'Bet Id' })
     betId: string = "";
 
-	@property(JsonAsset)
-	data: JsonAsset = null;
+    @property(JsonAsset)
+    data: JsonAsset = null;
 }
 
 @ccclass('GameDirector')
 export class GameDirector extends Component {
     @property({ type: JsonAsset })
-	joinGameData: JsonAsset;
+    joinGameData: JsonAsset;
 
     @property({ type: [DataByBetId] })
-	dataByBetId: DataByBetId[] = [];
+    dataByBetId: DataByBetId[] = [];
 
     eventManager: GameEventManager = null;
 
@@ -26,7 +26,7 @@ export class GameDirector extends Component {
 
         globalThis.testGame = this;
     }
-    
+
     start(): void {
         this.onJoinGameRequest();
     }
@@ -45,11 +45,11 @@ export class GameDirector extends Component {
 
     sendSpinRequest(betId: string): void {
         warn("%c sendSpinRequest ", "color: red", betId);
-        
+        this.eventManager.emit("SPIN_REQUEST")
         this.scheduleOnce(() => {
             const resultData = this.dataByBetId.find(data => data.betId === betId).data.json;
             warn("%c resultData ", "color: red", resultData);
-            this.eventManager.emit("SPIN_REQUEST", resultData);
+            this.eventManager.emit("SPIN_SUCCESS", resultData);
         }, 0.3);
     }
 }
