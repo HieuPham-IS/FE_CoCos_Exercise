@@ -1,4 +1,4 @@
-import { _decorator, Component, Node, SpriteFrame } from 'cc';
+import { _decorator, Component, Node, Sprite, SpriteFrame } from 'cc';
 const { ccclass, property } = _decorator;
 
 @ccclass('Slot')
