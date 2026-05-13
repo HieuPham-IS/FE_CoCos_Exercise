@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-import { _decorator, Component, Node, Sprite, SpriteFrame } from 'cc';
-=======
 import { _decorator, Component, Sprite, SpriteFrame } from 'cc';
->>>>>>> 8053cb205396768ecad5fc0addac5c72a4d80f4a
 const { ccclass, property } = _decorator;
 
 @ccclass('Symbols')
