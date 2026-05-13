@@ -170,7 +170,7 @@
     "_priority": 0,
     "_fov": 45,
     "_fovAxis": 0,
-    "_orthoHeight": 360,
+    "_orthoHeight": 359.99999999999994,
     "_near": 0,
     "_far": 1000,
     "_color": {
@@ -1343,7 +1343,7 @@
     "node": {
       "__id__": 17
     },
-    "_enabled": false,
+    "_enabled": true,
     "__prefab": null,
     "_type": 0,
     "_inverted": false,
@@ -1358,7 +1358,7 @@
     "node": {
       "__id__": 17
     },
-    "_enabled": false,
+    "_enabled": true,
     "__prefab": null,
     "_customMaterial": null,
     "_srcBlendFactor": 2,
