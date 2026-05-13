@@ -170,7 +170,7 @@
     "_priority": 0,
     "_fov": 45,
     "_fovAxis": 0,
-    "_orthoHeight": 359.99999999999994,
+    "_orthoHeight": 360,
     "_near": 0,
     "_far": 1000,
     "_color": {
@@ -1343,7 +1343,7 @@
     "node": {
       "__id__": 17
     },
-    "_enabled": true,
+    "_enabled": false,
     "__prefab": null,
     "_type": 0,
     "_inverted": false,
@@ -1358,7 +1358,7 @@
     "node": {
       "__id__": 17
     },
-    "_enabled": true,
+    "_enabled": false,
     "__prefab": null,
     "_customMaterial": null,
     "_srcBlendFactor": 2,
@@ -1399,52 +1399,11 @@
     },
     "_enabled": true,
     "__prefab": null,
-    "symbolPrefabs": [
-      {
-        "__uuid__": "12186e2a-7994-4973-b6c3-b71fb1b6bb64",
-        "__expectedType__": "cc.Prefab"
-      },
-      {
-        "__uuid__": "d0b98381-37ce-460c-a8c6-71c416471c9b",
-        "__expectedType__": "cc.Prefab"
-      },
-      {
-        "__uuid__": "b4f26415-a3fc-4e57-a265-677f22b000be",
-        "__expectedType__": "cc.Prefab"
-      },
-      {
-        "__uuid__": "c570686e-607b-4a2c-93f4-d985dd9ea7f1",
-        "__expectedType__": "cc.Prefab"
-      },
-      {
-        "__uuid__": "ed23fa2c-6901-4cde-87a0-4e2ff7279e55",
-        "__expectedType__": "cc.Prefab"
-      },
-      {
-        "__uuid__": "d8ae285f-e613-49e2-aa43-eebbb1f7f342",
-        "__expectedType__": "cc.Prefab"
-      },
-      {
-        "__uuid__": "e0744a52-a7d7-4348-9607-06591192eaad",
-        "__expectedType__": "cc.Prefab"
-      },
-      {
-        "__uuid__": "57f4b7fc-5cf7-4de7-b491-b501502cee0c",
-        "__expectedType__": "cc.Prefab"
-      },
-      {
-        "__uuid__": "d1fb43d4-0c25-4e7b-b9c9-51dc5005d73b",
-        "__expectedType__": "cc.Prefab"
-      },
-      {
-        "__uuid__": "dfad30c3-b99a-4875-85be-246b391a8984",
-        "__expectedType__": "cc.Prefab"
-      },
-      {
-        "__uuid__": "29c7fae5-c010-4924-a0ea-b429f15d929b",
-        "__expectedType__": "cc.Prefab"
-      }
-    ],
+    "symbolPrefab": {
+      "__uuid__": "12186e2a-7994-4973-b6c3-b71fb1b6bb64",
+      "__expectedType__": "cc.Prefab"
+    },
+    "symbolCount": 11,
     "reels": [
       {
         "__id__": 21

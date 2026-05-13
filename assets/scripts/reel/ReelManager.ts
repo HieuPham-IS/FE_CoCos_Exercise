@@ -7,8 +7,11 @@ import { GameDirector } from '../core/GameDirector';
 
 @ccclass('ReelManager')
 export class ReelManager extends Component {
-    @property([Prefab])
-    symbolPrefabs: Prefab[] = [];
+    @property(Prefab)
+    symbolPrefab: Prefab = null;
+
+    @property
+    symbolCount: number = 8;
 
     @property([Reel])
     reels: Reel[] = [];
@@ -21,31 +24,31 @@ export class ReelManager extends Component {
     private _lastSpinData: any = null;
 
     protected onLoad(): void {
-        this.symbolPrefabs.forEach(p => {
-            SlotPool.instance.addPrefab(p.name, p);
-        });
-
+        if (this.symbolPrefab) {
+            SlotPool.instance.addPrefab(this.symbolPrefab.name, this.symbolPrefab);
+        }
         this._eventManager = this.directorNode.getComponent(GameEventManager);
     }
 
     protected onEnable(): void {
         this._eventManager.on('SPIN_REQUEST', this._onSpinStart, this);
-        this._eventManager.on('SPIN_SUCCESS', this._onSpinSuccess, this);
     }
 
     protected start(): void {
-        this.symbolPrefabs.forEach(p => {
-            SlotPool.instance.addPrefab(p.name, p);
-        });
-
+        if (!this.symbolPrefab) return;
         this.reels.forEach(reel => {
-            reel.initReel(this.symbolPrefabs);
-        })
+            reel.initReel(this.symbolPrefab.name, this.symbolCount);
+        });
     }
 
-    private _onSpinStart() {
+    protected onDisable(): void {
+        this._eventManager.off('SPIN_REQUEST', this._onSpinStart, this);
+    }
+
+    private _onSpinStart(data: any) {
         this._stoppedReelCount = 0;
         this.reels.forEach(reel => reel.startSpin());
+        this._onSpinSuccess(data);
     }
 
     private _onSpinSuccess(data: any) {
@@ -62,8 +65,6 @@ export class ReelManager extends Component {
                 });
             });
         });
-
-
     }
 
     private _onReelStopped() {

@@ -45,11 +45,11 @@ export class GameDirector extends Component {
 
     sendSpinRequest(betId: string): void {
         warn("%c sendSpinRequest ", "color: red", betId);
-        this.eventManager.emit("SPIN_REQUEST")
+
         this.scheduleOnce(() => {
             const resultData = this.dataByBetId.find(data => data.betId === betId).data.json;
             warn("%c resultData ", "color: red", resultData);
-            this.eventManager.emit("SPIN_SUCCESS", resultData);
+            this.eventManager.emit("SPIN_REQUEST", resultData);
         }, 0.3);
     }
 }
